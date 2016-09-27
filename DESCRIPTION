@@ -6,7 +6,10 @@ Authors@R: as.person(c(
     "Greg Macfarlane <macfarlaneg@pbworld.com> [aut, cre]",
     "Kyle Ward <warddk@pbworld.com> [aut]"
   ))
-Description: This package collects multiple functions that are useful in cleaning
-  and manipulating origin/destination matrices.
+Description: This package collects multiple functions that are useful in
+    cleaning and manipulating origin/destination matrices.
 License: MIT + file LICENSE
 LazyData: TRUE
+Imports:
+    magrittr
+RoxygenNote: 5.0.1
