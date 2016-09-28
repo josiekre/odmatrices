@@ -15,6 +15,15 @@
 #'   cores balanced.
 #' @importFrom magrittr '%>%'
 #' @importFrom dplyr left_join
+#' @author Kyle Ward
+#'
+#'
+#' @examples
+#' m <- data_frame(
+#'   origin = c(1, 1, 2, 2), destination = c(1, 2, 1, 2),
+#'   trips = c(10, 22, 11, 30)
+#' )
+#' balance_matrix(m)
 #'
 #' @export
 #'

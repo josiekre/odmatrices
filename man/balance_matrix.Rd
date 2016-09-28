@@ -25,4 +25,15 @@ This function takes an input matrix in origin/destination form and balances
 it so that it is symmetric according to the following formula
 \equation{(A + A^T) / 2 }
 }
+\examples{
+m <- data_frame(
+  origin = c(1, 1, 2, 2), destination = c(1, 2, 1, 2),
+  trips = c(10, 22, 11, 30)
+)
+balance_matrix(m)
+
+}
+\author{
+Kyle Ward
+}
 
