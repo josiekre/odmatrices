@@ -29,4 +29,10 @@ Either a matrix or a numeric vector (determined by type of
 \description{
 Sometimes it may be necessary to scale a matrix; as in \eqn{B = xA} where
 }
+\examples{
+A <- matrix(runif(9), nrow = 3)
+sum(A)
+scale_matrix_naive(A, )
+
+}
 

@@ -16,6 +16,13 @@
 #' @return Either a matrix or a numeric vector (determined by type of
 #'   \code{A}), with scaled values.
 #'
+#' @examples
+#' A <- matrix(runif(9), nrow = 3)
+#' sum(A)
+#' scale_matrix_naive(A, )
+#'
+#' @export
+#'
 scale_matrix_naive <- function(A, x, matrix_column_name = NULL,
                                scale_column_name = NULL){
 
