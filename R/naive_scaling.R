@@ -1,20 +1,23 @@
 #' Naively rescale a matrix
 #'
-#' Sometimes it may be necessary to scale a matrix, as in \equation{B = xA} where
+#' Sometimes it may be necessary to scale a matrix; as in \eqn{B = xA} where
 #'
 #' @param A A matrix in either \code{data_frame} or matrix form.
-#' @param x If a matrix or a \code{data_frame}, then A will be multiplied by the ratio of
-#'   \equation{\sum_{\all i j} x_{ij}} to \equation{\sum_{\all i j} A_{ij}}, such
-#'   that \equation{\sum_{\all i j} B_{ij} = \sum_{\all i j} x_{ij}}. If \code{x}
-#' @param scale_column_name If \code{x} is a \code{data_frame}, the name of the
-#'   column that contains the values for scaling.
+#' @param x If a matrix or a \code{data_frame}, then A will be multiplied by the
+#'   ratio of \eqn{\sum_{\forall i j} x_{ij}} to \eqn{\sum_{\forall i j}
+#'   A_{ij}}, such that \eqn{\sum_{\forall i j} B_{ij} = \sum_{\forall i j}
+#'   x_{ij}}. If \code{x} is a scalar, then \eqn{A} will be scaled to the
+#'   same magnitude as \eqn{x}.
 #' @param matrix_column_name If \code{A} is a \code{data_frame}, the name of the
 #'   column that contains the values requiring scaling.
+#' @param scale_column_name If \code{x} is a \code{data_frame}, the name of the
+#'   column that contains the values for scaling.
 #'
 #' @return Either a matrix or a numeric vector (determined by type of
 #'   \code{A}), with scaled values.
 #'
-scale_matrix_naive <- function(A, x, matrix_column_name = NULL, scale_column_name = NULL){
+scale_matrix_naive <- function(A, x, matrix_column_name = NULL,
+                               scale_column_name = NULL){
 
   # Determine if x is matrix or scalar.
   if(is.matrix(x)){

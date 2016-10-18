@@ -10,9 +10,11 @@ scale_matrix_naive(A, x, matrix_column_name = NULL,
 \arguments{
 \item{A}{A matrix in either \code{data_frame} or matrix form.}
 
-\item{x}{If a matrix or a \code{data_frame}, then A will be multiplied by the ratio of
-\equation{\sum_{\all i j} x_{ij}} to \equation{\sum_{\all i j} A_{ij}}, such
-that \equation{\sum_{\all i j} B_{ij} = \sum_{\all i j} x_{ij}}. If \code{x}}
+\item{x}{If a matrix or a \code{data_frame}, then A will be multiplied by the
+ratio of \eqn{\sum_{\forall i j} x_{ij}} to \eqn{\sum_{\forall i j}
+A_{ij}}, such that \eqn{\sum_{\forall i j} B_{ij} = \sum_{\forall i j}
+x_{ij}}. If \code{x} is a scalar, then \eqn{A} will be scaled to the
+same magnitude as \eqn{x}.}
 
 \item{matrix_column_name}{If \code{A} is a \code{data_frame}, the name of the
 column that contains the values requiring scaling.}
@@ -25,6 +27,6 @@ Either a matrix or a numeric vector (determined by type of
   \code{A}), with scaled values.
 }
 \description{
-Sometimes it may be necessary to scale a matrix, as in \equation{B = xA} where
+Sometimes it may be necessary to scale a matrix; as in \eqn{B = xA} where
 }
 
