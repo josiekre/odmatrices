@@ -14,9 +14,9 @@
 #' @export
 scale_matrix_naive <- function(A, scale, matrix_field = NULL){
 
-  if(class(A) == "matrix"){
+  if(is.matrix(A)){
     A * scale / sum(A)
-  } else if(any(class(A) == "data.frame")){
+  } else if(inherits(A, "data.frame")){
     if(is.null(matrix_field)) stop("Please specify which field contains the matrix.")
 
     A[[matrix_field]] <- A[[matrix_field]] * scale / sum(A[[matrix_field]])
