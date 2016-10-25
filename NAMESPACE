@@ -2,5 +2,10 @@
 
 export(balance_matrix)
 export(scale_matrix_naive)
+importFrom(dplyr,filter)
+importFrom(dplyr,group_by)
 importFrom(dplyr,left_join)
+importFrom(dplyr,mutate)
+importFrom(dplyr,select)
+importFrom(dplyr,summarise)
 importFrom(magrittr,'%>%')
