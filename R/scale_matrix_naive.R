@@ -5,6 +5,8 @@
 #'
 #' @param A A matrix in either \code{data.frame} or \code{matrix} format.
 #' @param scale A constant that the new matrix will be scaled to.
+#' @param matrix_field A character string giving the field that needs to be
+#'   scaled.
 #'
 #' @return An object of \code{class(A)} with rescaled values.
 #'
