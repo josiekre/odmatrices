@@ -4,16 +4,16 @@
 \alias{scale_matrix_naive}
 \title{Naive Scaling of a Matrix}
 \usage{
-scale_matrix_naive(A, scale)
+scale_matrix_naive(A, scale, matrix_field = NULL)
 
-scale_matrix_naive(A, scale)
+scale_matrix_naive(A, scale, matrix_field = NULL)
 }
 \arguments{
 \item{A}{A matrix in either \code{data_frame} or \code{matrix} format.}
 
 \item{scale}{A constant that the new matrix will be scaled to.}
 
-\item{A}{A matrix in either \code{data_frame} or \code{matrix} format.}
+\item{A}{A matrix in either \code{data.frame} or \code{matrix} format.}
 
 \item{scale}{A constant that the new matrix will be scaled to.}
 }
@@ -31,6 +31,6 @@ a scalar value by multiplying all values of a matrix by a uniform value.
 }
 \examples{
 scale_matrix_naive(test_odmatrix, 1500)
-
+scale_matrix_naive(test_oddf, 25125, "volume")
 }
 
