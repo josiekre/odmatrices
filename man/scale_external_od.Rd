@@ -8,13 +8,14 @@ scale_external_od(od_matrix, counts)
 }
 \arguments{
 \item{od_matrix}{Matrix in \code{data_frame} format, with columns \code{origin},
-\code{destination}, and \code{flow}.}
+\code{destination}, and \code{volume}. See \code{\link{test_oddf}}}
 
 \item{counts}{A \code{data_frame} with a \code{station} column indicating
-which external station the count represents.}
+which external station the count represents, and a \code{aawdt} column
+containing the count volume. See \code{\link{test_counts}}}
 }
 \value{
-A \code{data_frame} of the same structure as \code{df}, with columns
+A \code{data_frame} of the same structure as \code{od_matrix}, with columns
   added representing the scaled OD flows.
 }
 \description{
