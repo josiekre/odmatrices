@@ -4,15 +4,15 @@
 \name{test_oddf}
 \alias{test_oddf}
 \title{Demonstration OD data frame}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 9 rows and 3 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 25 rows and 3 columns.}
 \usage{
 test_oddf
 }
 \description{
-An object of class \code{data_frame} containing 9 observations of 3
+An object of class \code{data_frame} containing 25 observations of 3
 variables:
 \describe{
-  \item{origin}{The origin zone, either internal "I" or one of two externals zones.}
+  \item{origin}{The origin zone, two internals and three externals.}
   \item{destination}{The destination zone.}
   \item{volume}{The daily volume flowing from origin to destination}
 }

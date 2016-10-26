@@ -9,10 +9,10 @@
 
 #' Demonstration OD data frame
 #'
-#' An object of class \code{data_frame} containing 9 observations of 3
+#' An object of class \code{data_frame} containing 25 observations of 3
 #' variables:
 #' \describe{
-#'   \item{origin}{The origin zone, either internal "I" or one of two externals zones.}
+#'   \item{origin}{The origin zone, two internals and three externals.}
 #'   \item{destination}{The destination zone.}
 #'   \item{volume}{The daily volume flowing from origin to destination}
 #' }
@@ -21,7 +21,7 @@
 
 #' Demonstration external station counts
 #'
-#' An object of class \code{data_frame} containing 2 observations of 2 variables:
+#' An object of class \code{data_frame} containing 3 observations of 3 variables:
 #' \describe{
 #'   \item{station}{A station ID corresponding to the external stations in
 #'   \code{\link{test_odmatrix}} and \code{\link{test_oddf}}}

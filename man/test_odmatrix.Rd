@@ -4,7 +4,7 @@
 \name{test_odmatrix}
 \alias{test_odmatrix}
 \title{Demonstration OD matrix}
-\format{An object of class \code{matrix} with 3 rows and 3 columns.}
+\format{An object of class \code{matrix} with 5 rows and 5 columns.}
 \usage{
 test_odmatrix
 }
