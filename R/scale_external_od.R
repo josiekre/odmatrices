@@ -22,7 +22,7 @@
 #'
 #' @importFrom magrittr '%>%'
 #' @importFrom dplyr mutate group_by summarise filter left_join select
-#'   mutate_each transmute
+#'   mutate_each transmute ungroup funs select rename
 #' @importFrom tidyr spread
 #'
 #' @export
@@ -67,9 +67,9 @@ scale_external_od <- function(od_matrix, counts){
 
 
   # adjust IE trips to match both counts and adjusted external share
-  output <- od_balanced %>% ungroup() %>%
+  output <- od_balanced %>% dplyr::ungroup() %>%
     # starting is the balanced observed OD matrix
-    rename(starting = volume) %>%
+    dplyr::rename(starting = volume) %>%
     dplyr::left_join(
       reweighted %>% select(-ID, ee = weight),
       by = c("origin", "destination")
@@ -90,7 +90,7 @@ scale_external_od <- function(od_matrix, counts){
       ie_split = (starting * ix) / sum(starting * ix),
       ie_volume = ie_split * (aawdt - sum(ee, na.rm = TRUE))
     ) %>%
-    select(-aawdt) %>% ungroup() %>%
+    dplyr::select(-aawdt) %>% dplyr::ungroup() %>%
 
     # destination-side
     dplyr::left_join(
@@ -103,8 +103,8 @@ scale_external_od <- function(od_matrix, counts){
       ei_split = (starting * xi) / sum(starting * xi),
       ei_volume = ei_split * (aawdt - sum(ee, na.rm = TRUE))
     ) %>%
-    dplyr::mutate_each(funs(ifelse(is.na(.), 0, .)), ee, ie_volume, ei_volume) %>%
-    ungroup() %>%
+    dplyr::mutate_each(dplyr::funs(ifelse(is.na(.), 0, .)), ee, ie_volume, ei_volume) %>%
+    dplyr::ungroup() %>%
 
     # total
     dplyr::transmute(origin, destination, volume = ee + ie_volume + ei_volume)

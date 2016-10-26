@@ -15,5 +15,6 @@ Depends:
   R (>= 2.10)
 Imports: magrittr,
     dplyr,
-    ipfr
+    ipfr,
+    tidyr
 Remotes: pbsag/ipfr

@@ -13,7 +13,7 @@ column for destination.}
 \item{from}{A character string identifying the origin column, defaults to
 \code{origin}}
 
-\item{from}{A character string identifying the destination column, defaults
+\item{to}{A character string identifying the destination column, defaults
 to \code{destination}}
 }
 \value{
@@ -23,7 +23,7 @@ A \code{data_frame} of the same format as \code{df}, with the matrix
 \description{
 This function takes an input matrix in origin/destination form and balances
 it so that it is symmetric according to the following formula
-\equation{(A + A^T) / 2 }
+\eqn{(A + A^T) / 2 }
 }
 \examples{
 balance_matrix(test_oddf)

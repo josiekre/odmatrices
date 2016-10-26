@@ -2,19 +2,21 @@
 #'
 #' This function takes an input matrix in origin/destination form and balances
 #' it so that it is symmetric according to the following formula
-#' \equation{(A + A^T) / 2 }
+#' \eqn{(A + A^T) / 2 }
 #'
 #' @param df A matrix in \code{data_frame} format with a column for origin and a
 #'   column for destination.
 #' @param from A character string identifying the origin column, defaults to
 #'   \code{origin}
-#' @param from A character string identifying the destination column, defaults
+#' @param to A character string identifying the destination column, defaults
 #'   to \code{destination}
 #'
 #' @return A \code{data_frame} of the same format as \code{df}, with the matrix
 #'   cores balanced.
 #' @importFrom magrittr '%>%'
 #' @importFrom dplyr left_join
+#' @importFrom stats setNames
+#'
 #' @author Kyle Ward
 #'
 #'
@@ -39,7 +41,7 @@ balance_matrix <- function (df, from = "origin", to = "destination") {
 
   # Joining the two dataframes
   both <- df %>%
-    dplyr::left_join(df_t, by = setNames(c(from, to), c(from, to)))
+    dplyr::left_join(df_t, by = stats::setNames(c(from, to), c(from, to)))
 
   # For each column other than from and to, add together and divide by 2
   # Afterwards, remove the transposed column
